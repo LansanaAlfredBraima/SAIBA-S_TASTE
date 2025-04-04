@@ -23,7 +23,9 @@
             font-size: 1.5em;
             display: flex;
             align-items: center;
+            text-align: center;
             justify-content: center;
+            padding: 10px;
             gap: 15px;
         }
         .logo {
@@ -184,20 +186,23 @@
         }
 
         @media screen and (max-width: 600px) {
-            nav {
-                flex-direction: column;
-            }
-            nav a {
-                padding: 10px;
-                font-size: 1em;
-            }
-            
-        }
+    nav {
+        flex-direction: column;
+        align-items: flex-start; /* NEW: aligns children to the left */
+    }
+    nav a {
+        padding: 10px;
+        font-size: 1em;
+        text-align: left; /* Just in case the links have text-align weirdness */
+        width: 100%; /* Optional: makes each link span full width */
+    }
+}
+
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Nusaiba's Sugar Art Logo" class="logo">
+        <img src="images/logo.jpg" alt="Saiba's Taste Logo" class="logo">
         <h1>Saiba's Taste</h1>
     </header>
     <nav>
@@ -213,7 +218,7 @@
     </div>
     <section id="about">
         <h2>About Us</h2>
-        <p>Welcome to Nusaiba's Sugar Art! We create custom cakes for all occasions.</p>
+        <p>Welcome to Saiba's Taste! We create custom cakes for all occasions.</p>
     </section>
     <section id="menu">
         <h2>Our Cakes</h2>
