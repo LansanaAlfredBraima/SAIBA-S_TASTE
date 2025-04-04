@@ -185,6 +185,26 @@
             background-color: yellow;
         }
 
+        #backToTop {
+      position: fixed;
+      bottom: 40px;
+      left: 30px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      display: none; /* Hidden by default */
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    #backToTop:hover {
+      background-color: #0056b3;
+    }
+
+
         @media screen and (max-width: 600px) {
     nav {
         flex-direction: column;
@@ -285,6 +305,8 @@
     <a href="https://wa.me/032752773" class="whatsapp-button" target="_blank">
         <img src="images/whatsapp.jpg" alt="WhatsApp">
     </a>
+
+    <button id="backToTop">↑</button>
     <footer>
         &copy; 2025 Nusaiba's Sugar Art | All Rights Reserved
     </footer>
@@ -306,5 +328,25 @@
             showSlide();
         }, 3000);
     </script>
+
+<script>
+    const backToTopButton = document.getElementById("backToTop");
+
+    window.onscroll = () => {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    backToTopButton.onclick = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
+  </script>
+
 </body>
 </html>
